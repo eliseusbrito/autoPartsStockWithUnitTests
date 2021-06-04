@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "50558f0d-23ba-43dd-8443-e3adce15ee6b",
+		"name": "AutoPart Stock API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Parts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1OTE2NzAwODgsImlhdCI6MTU5MTY1MjA4OH0.j6nd_s7VFvPVbh4abKrjeaYxgmDCxMxc0O18lPz2juONf3zvKBO7vx-w2WO2b_BJnOl5vAI_5DLg5RrgIZ5WEg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Part",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Harmonic Balancer Assembly\",\n\t\"brand\": \"Dorman - OE Solutions\",\n\t\"max\": 10,\n\t\"quantity\": 4,\n\t\"type\": \"ENGINE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Part by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/Harmonic Balancer Assembly",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						"Harmonic Balancer Assembly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Part by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment Part stock",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/1/increment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						"1",
+						"increment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrement Part stock",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quantity\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/1/decrement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						"1",
+						"decrement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger-ui",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger Docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v2/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
